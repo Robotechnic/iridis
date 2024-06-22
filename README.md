@@ -59,7 +59,7 @@ if __name__ == "__main__":
         print("Goodbye, world!")
 ```
 ````
-![code](https://raw.githubusercontent.com/Robotechnic/iridis/main/images/code1.png)
+![code](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/code1.png)
 
 <!--EXAMPLE(math)-->
 ````typ
@@ -81,7 +81,7 @@ $
     (((1 + 5) * 7) / (5 - 8 * 7) + 3) * 2 approx 4.352941176
 $
 ````
-![math](https://raw.githubusercontent.com/Robotechnic/iridis/main/images/math1.png)
+![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/math1.png)
 
 ## Changelog
 

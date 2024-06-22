@@ -12,7 +12,7 @@ BEGIN {
 
 {
 	if (create_image_tag) {
-		print "![" name "](https://raw.githubusercontent.com/Robotechnic/iridis/main/images/" name "1.png)"
+		print "![" name "](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/" name "1.png)"
 		create_image_tag = 0
 	}
 	print
