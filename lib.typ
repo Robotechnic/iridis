@@ -16,7 +16,7 @@
 	body
 ) = {
 
-	let counter = counter("parenthesis")
+	let counter = state("parenthesis", 0)
 	let need-regex-escape = (c) => {
 		(c == "(") or (c == ")") or (c == "[") or (c == "]") or (c == "{") or (c == "}") or (c == "\\") or (c == ".") or (c == "*") or (c == "+") or (c == "?") or (c == "^") or (c == "$") or (c == "|") or (c == "-")
 	}
@@ -27,14 +27,24 @@
 		}).slice(0, -1)
 	}
 
-	show regex(build-regex(opening-parenthesis)) : body => context {
-		counter.update(n => n + 1)
-		show: text(fill: palette.at(calc.rem(counter.get().at(0), palette.len())), body)
+  let show-rules(body) =  context {
+		
+		show regex(build-regex(opening-parenthesis)) :  body => context {
+			show: text.with(fill: palette.at(calc.rem(counter.get(), palette.len()))) 
+			body
+			counter.update(n => n + 1)
+		}
+
+		show regex(build-regex(closing-parenthesis)) : body => context {
+			counter.update(n => n - 1)
+			text(fill: palette.at(calc.rem(counter.get() - 1, palette.len())), body)
+		}
+		body
 	}
 
-	show regex(build-regex(closing-parenthesis)) : body => context {
-		counter.update(n => n - 1)
-		show: text(fill: palette.at(calc.rem(counter.get().at(0) - 1, palette.len())), body)
-	}
+	show raw : show-rules
+	show math.equation : show-rules
+ 
 	body
 }
+
