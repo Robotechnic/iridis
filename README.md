@@ -80,6 +80,13 @@ $
 $
     (((1 + 5) * 7) / (5 - 8 * 7) + 3) * 2 approx 4.352941176
 $
+
+$ mat(
+  1, 2, ..., (10 / 2);
+  2, 2, ..., 10;
+  dots.v, dots.v, dots.down, dots.v;
+  10, (10 - (5 * 8)) / 2, ..., 10;
+) $
 ````
 ![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/math1.png)
 
