@@ -6,9 +6,9 @@ clean-link:
 	rm -rf ~/.cache/typst/packages/preview/iridis
 
 module:
-    sh ./generate_images.sh
+	sh ./generate_images.sh
 	mkdir -p ./iridis
 	cp ./typst.toml ./iridis/typst.toml
 	cp ./LICENSE ./iridis/LICENSE
-	cp ./lib.typ ./iridis/lib.typ
+	cp ./*.typ ./iridis/
 	awk '/<!--EXCLUDE-->/, /<!--END-->/ {next} 1' ./README.md > ./iridis/README.md
