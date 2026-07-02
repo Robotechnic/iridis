@@ -59,7 +59,7 @@ if __name__ == "__main__":
 ```
 ````
 
-![code](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/code/ref/1.png)
+![example of code coloration](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/code/ref/1.png)
 
 ```typ
 #show: iridis.iridis-show
@@ -96,7 +96,7 @@ $
 $
 ```
 
-![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/math/ref/1.png)
+![example of math coloration](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/math/ref/1.png)
 
 ## Changelog
 
