@@ -22,7 +22,6 @@ If the symbols are single characters, they are interpreted as normal strings but
 
 ## Exemples
 
-<!--EXAMPLE(code)-->
 ````typ
 #show: iridis.iridis-show
 
@@ -59,7 +58,8 @@ if __name__ == "__main__":
         print("Goodbye, world!")
 ```
 ````
-![code](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/code1.png)
+
+![code](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/code/ref/1.png)
 
 <!--EXAMPLE(math)-->
 ````typ
@@ -88,9 +88,14 @@ $ mat(
   10, (10 - (5 * 8)) / 2, ..., 10;
 ) $
 ````
-![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/images/math1.png)
+
+![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/math/ref/1.png)
 
 ## Changelog
+
+### 0.2.0
+
+- Update the package to work with typst 0.15.0
 
 ### 0.1.0
 
