@@ -5,7 +5,7 @@ Iridis is a package to colorize parenthesis in your typst document. Iridis is a 
 <!--EXCLUDE-->
 You can import the module with:
 ```typ
-#import "@preview/iridis:0.1.0": *
+#import "@preview/iridis:0.2.0": *
 ```
 <!--END-->
 
@@ -61,8 +61,7 @@ if __name__ == "__main__":
 
 ![code](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/code/ref/1.png)
 
-<!--EXAMPLE(math)-->
-````typ
+```typ
 #show: iridis.iridis-show
 
 $
@@ -78,16 +77,24 @@ $
 $
 
 $
-    (((1 + 5) * 7) / (5 - 8 * 7) + 3) * 2 approx 4.352941176
+    (((1 + 5) times 7) / (5 - 8 times 7) + 3) times 2 approx 4.352941176
 $
 
 $ mat(
   1, 2, ..., (10 / 2);
   2, 2, ..., 10;
   dots.v, dots.v, dots.down, dots.v;
-  10, (10 - (5 * 8)) / 2, ..., 10;
+  10, (10 - (5 times 8)) / 2, ..., 10;
 ) $
-````
+
+$
+[1;2]
+$
+
+$
+{a, forall a in A | exists b in [5;10]. a times b > 10}
+$
+```
 
 ![math](https://raw.githubusercontent.com/Robotechnic/iridis/master/tests/math/ref/1.png)
 
