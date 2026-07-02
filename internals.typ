@@ -46,6 +46,7 @@
   fields
 }
 
+
 #let colorize-math(equation, i: 0) = {
   if type(equation) != content {
     return equation
@@ -102,16 +103,18 @@
     equation.func()(colorize-math(equation.body, i: i), ..copy-fields(equation, exclude: ("body",)))
   } else if equation.has("children") {
     let colorisation = equation.children.fold((i, ()), ((i, acc), child) => {
-      if child == [(] {
-        acc.push([
-          #show: text.with(fill: iridis-palette.at(calc.rem(i, iridis-palette.len())))
-          #equation.func()(([(],))])
-        (i + 1, acc)
-      } else if child == [)] {
-        acc.push([
-          #show: text.with(fill: iridis-palette.at(calc.rem(i - 1, iridis-palette.len())))
-          #equation.func()(([)],))])
-        (i - 1, acc)
+      if child.has("text") {
+        if child.text == "(" or child.text == "[" or child.text == "{" {
+          acc.push(
+						text(fill: iridis-palette.at(calc.rem(i, iridis-palette.len())), child))
+          (i + 1, acc)
+        } else if child.text == ")" or child.text == "]" or child.text == "}" {
+          acc.push(text(fill: iridis-palette.at(calc.rem(i - 1, iridis-palette.len())), child))
+          (i - 1, acc)
+        } else {
+					acc.push(colorize-math(child, i: i))
+					(i, acc)
+				}
       } else {
         acc.push(colorize-math(child, i: i))
         (i, acc)

@@ -1,6 +1,6 @@
 #import "../../lib.typ" as iridis
 
-#set page(width: auto, height: auto, margin: 2pt)
+#set page(width: auto, height: auto, margin: 10pt)
 
 
 #show: iridis.iridis-show
@@ -18,12 +18,20 @@ $
 $
 
 $
-    (((1 + 5) * 7) / (5 - 8 * 7) + 3) * 2 approx 4.352941176
+    (((1 + 5) times 7) / (5 - 8 times 7) + 3) times 2 approx 4.352941176
 $
 
 $ mat(
   1, 2, ..., (10 / 2);
   2, 2, ..., 10;
   dots.v, dots.v, dots.down, dots.v;
-  10, (10 - (5 * 8)) / 2, ..., 10;
+  10, (10 - (5 times 8)) / 2, ..., 10;
 ) $
+
+$
+[1;2]
+$
+
+$
+{a, forall a in A | exists b in [5;10]. a times b > 10}
+$
