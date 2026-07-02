@@ -16,4 +16,4 @@ module:
 	cp ./README.md $(TARGET_DIR)/README.md
 	cp ./*.typ $(TARGET_DIR)/
 	sed -i "s/\/master\//\/$(VERSION)\//g" $(TARGET_DIR)/README.md
-
+	sed -i '/<!--EXCLUDE-->/,/<!--END-->/d' $(TARGET_DIR)/README.md
