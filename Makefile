@@ -10,10 +10,10 @@ clean-link:
 	rm -rf ~/.cache/typst/packages/preview/$(PACKAGE_NAME)
 
 module:
-	sh ./generate_images.sh
-	mkdir -p ./$(PACKAGE_NAME)
-	cp ./typst.toml ./$(PACKAGE_NAME)/typst.toml
-	cp ./LICENSE ./$(PACKAGE_NAME)/LICENSE
-	cp ./*.typ ./$(PACKAGE_NAME)/
+	mkdir -p $(TARGET_DIR)
+	cp ./typst.toml $(TARGET_DIR)/typst.toml
+	cp ./LICENSE $(TARGET_DIR)/LICENSE
+	cp ./README.md $(TARGET_DIR)/README.md
+	cp ./*.typ $(TARGET_DIR)/
 	sed -i "s/\/master\//\/$(VERSION)\//g" $(TARGET_DIR)/README.md
 
